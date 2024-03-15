@@ -27,7 +27,8 @@ public class Program {
 
 		Map<Long, Order> orders = new HashMap<>();
 		Map<Long, Product> prods = new HashMap<>();
-
+		conn.close();
+		DB.closeConnection();
 		while (rs.next()) {
 			Long orderId = rs.getLong("order_id");
 			if (orders.get(orderId) == null) {
